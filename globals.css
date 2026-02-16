@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: 11 16 32;          
+  --panel: 17 25 54;       
+  --text: 255 255 255;
+  --muted: 184 193 209;    
+  --border: 70 86 120;     
+  --brand-teal: 46 211 198;
+  --brand-blue: 79 124 255;
+  --brand-violet: 108 99 255;
+}
+
+html, body { height: 100%; }
+body { background: rgb(var(--bg)); color: rgb(var(--text)); }
+
+input, button, textarea { font: inherit; }
