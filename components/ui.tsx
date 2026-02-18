@@ -2,23 +2,77 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export function Container({ children }: { children: ReactNode }) {
+  return <div className="mx-auto w-full max-w-6xl px-4">{children}</div>;
+}
+
+export function Badge({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <span className="inline-flex items-center rounded-full border border-border/60 bg-panel/40 px-3 py-1 text-xs text-muted">
       {children}
-    </div>
+    </span>
+  );
+}
+
+export function Button({
+  href,
+  children,
+  variant = "primary"
+}: {
+  href: string;
+  children: ReactNode;
+  variant?: "primary" | "secondary";
+}) {
+  const cls =
+    variant === "primary"
+      ? "inline-flex items-center justify-center rounded-xl bg-brand-teal px-5 py-3 font-semibold text-[#001b18] shadow-glow hover:opacity-95"
+      : "inline-flex items-center justify-center rounded-xl border border-border/70 bg-transparent px-5 py-3 font-semibold text-text hover:bg-panel/40";
+
+  return (
+    <Link href={href} className={cls}>
+      {children}
+    </Link>
+  );
+}
+
+export function Card({
+  title,
+  body,
+  href,
+  badge
+}: {
+  title: string;
+  body: string;
+  href: string;
+  badge?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group block rounded-2xl border border-border/60 bg-panel/30 p-6 hover:bg-panel/45"
+    >
+      {badge ? (
+        <div className="mb-3">
+          <Badge>{badge}</Badge>
+        </div>
+      ) : null}
+      <div className="text-lg font-semibold">{title}</div>
+      <div className="mt-2 text-sm text-muted">{body}</div>
+      <div className="mt-4 text-sm font-semibold text-brand-blue group-hover:underline">
+        Learn more →
+      </div>
+    </Link>
   );
 }
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-bg/80 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-border/50 bg-bg/80 backdrop-blur">
       <Container>
-        <div className="flex h-16 items-center justify-between">
-
-          {/* Logo */}
+        <div className="flex items-center justify-between py-4">
+          {/* LOGO (SVG) */}
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.svg"
@@ -30,31 +84,45 @@ export function Header() {
             />
           </Link>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-6 text-sm">
+          <nav className="flex items-center gap-3">
             <Link
               href="/resources"
-              className="text-muted hover:text-foreground transition-colors"
+              className="text-sm text-muted hover:text-text"
             >
               Resources
             </Link>
-
-            <Link
-              href="/ai-revenue-system"
-              className="text-muted hover:text-foreground transition-colors"
-            >
-              AI Revenue System
-            </Link>
-
             <Link
               href="/free-ai-visibility-audit"
-              className="rounded-xl bg-brand-teal px-4 py-2 font-semibold text-[#001b18] shadow-glow hover:opacity-95 transition"
+              className="text-sm text-muted hover:text-text"
             >
               Free Audit
             </Link>
+            <Button href="/free-ai-visibility-audit" variant="primary">
+              Start Audit
+            </Button>
           </nav>
         </div>
       </Container>
     </header>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="border-t border-border/50 py-10">
+      <Container>
+        <div className="flex flex-col gap-2 text-sm text-muted">
+          <div>© {new Date().getFullYear()} Reale Digital</div>
+          <div>
+            <Link
+              href="/free-ai-visibility-audit"
+              className="text-brand-blue hover:underline"
+            >
+              Free AI Visibility Audit
+            </Link>
+          </div>
+        </div>
+      </Container>
+    </footer>
   );
 }
