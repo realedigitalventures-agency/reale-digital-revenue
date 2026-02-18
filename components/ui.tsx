@@ -21,7 +21,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Reale Digital"
               width={170}
               height={44}
