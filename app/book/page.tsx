@@ -13,8 +13,11 @@ export default function BookPage() {
 
         <div className="rounded-2xl border border-border/60 bg-panel/40 p-6 mt-8">
           <p className="text-muted">
-            {/* Replace this with your embed */}
-            Embed scheduling widget here.
+<!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/reale-digital/ai-strategy-call?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+
           </p>
         </div>
       </Container>
