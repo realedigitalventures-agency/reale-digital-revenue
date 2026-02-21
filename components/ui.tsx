@@ -69,7 +69,7 @@ export function Card({
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-20 border-b border-border/50 bg-bg/80 backdrop-blur">
+<header className="sticky top-0 z-20 border-b border-border/50 bg-panel/80 backdrop-blur">
       <Container>
         <div className="flex items-center justify-between py-4">
           {/* LOGO (SVG) */}
