@@ -72,10 +72,10 @@ export function Header() {
 <header className="sticky top-0 z-20 border-b border-border/50 bg-panel/80 backdrop-blur">
       <Container>
         <div className="flex items-center justify-between py-4">
-          {/* LOGO (SVG) */}
+          {/* LOGO (PNG) */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Reale Digital"
               width={170}
               height={44}
