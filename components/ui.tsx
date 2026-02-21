@@ -75,7 +75,7 @@ export function Header() {
           {/* LOGO (PNG) */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/brand/logo.png"
               alt="Reale Digital"
               width={170}
               height={44}
