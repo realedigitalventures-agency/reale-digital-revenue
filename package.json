@@ -11,6 +11,7 @@
     "react": "latest",
     "react-dom": "latest",
     "resend": "^3.2.0"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "typescript": "^5",
