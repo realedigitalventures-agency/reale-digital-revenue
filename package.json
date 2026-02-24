@@ -15,6 +15,11 @@
     "resend": "^4.0.0",
     "zod": "^3.24.1"
   },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^19.0.10",
+    "typescript": "^5.5.4"
+  },
   "engines": {
     "node": "20.x"
   }
