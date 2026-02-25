@@ -1,49 +1,95 @@
-// app/resources/page.tsx
-import { Container, Badge, Button } from "@/components/ui";
-
-const resources = [
-  { title: "AI Search Visibility Guide", href: "/resources/ai-search-visibility" },
-  { title: "Google Business Profile Checklist", href: "/resources/gbp-checklist" },
-  { title: "Conversion Boost Playbook", href: "/resources/conversion-boost" },
-  { title: "Follow-Up Automation Templates", href: "/resources/follow-up-templates" },
-  { title: "Review Growth System", href: "/resources/review-growth" },
-];
+import Image from "next/image";
+import Link from "next/link";
+import { Container, Button } from "@/components/ui";
 
 export default function ResourcesPage() {
   return (
-    <main className="py-14 md:py-20">
+    <main className="py-16">
       <Container>
-        <div className="flex flex-col gap-6">
-          <Badge>Resources</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold">Free playbooks you can use today.</h1>
-          <p className="text-muted text-lg max-w-3xl">
-            Want quick wins? Start here. If you want us to implement it all for you, grab the Free AI Visibility Audit.
+        <div className="mb-12 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Free Resources & Playbooks
+          </h1>
+          <p className="text-muted mt-4 max-w-2xl mx-auto">
+            Tactical guides designed to help service businesses dominate AI search,
+            fix conversion leaks, and automate growth.
           </p>
+        </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button href="/free-ai-visibility-audit" variant="primary">
-              Get Your Free Audit
-            </Button>
-            <Button href="/book" variant="secondary">
-              Talk to Us
-            </Button>
-          </div>
+        <div className="grid md:grid-cols-3 gap-8">
 
-          <div className="grid md:grid-cols-2 gap-4 pt-8">
-            {resources.map((r) => (
-              <div key={r.href} className="rounded-2xl border border-border/60 bg-panel/40 p-6">
-                <h3 className="font-semibold text-lg">{r.title}</h3>
-                <p className="text-muted mt-2">
-                  Clear steps, zero fluff — designed for service businesses that want more booked calls.
-                </p>
-                <div className="mt-4">
-                  <Button href={r.href} variant="secondary">
-                    Open
-                  </Button>
-                </div>
+          {/* AI Search Shift */}
+          <div className="rounded-2xl border border-border/60 bg-panel/30 overflow-hidden hover:bg-panel/40 transition">
+            <Image
+              src="/The_AI_Search_Shift-REALE_DIGITAL.png"
+              alt="The AI Search Shift"
+              width={800}
+              height={800}
+              className="w-full h-auto object-cover"
+            />
+            <div className="p-6">
+              <h2 className="text-xl font-semibold">
+                The AI Search Shift (2026)
+              </h2>
+              <p className="text-muted mt-2 text-sm">
+                How customers find local businesses now — and how to structure your visibility to win.
+              </p>
+              <div className="mt-4">
+                <Button href="/ai-search-shift" variant="primary">
+                  View Guide
+                </Button>
               </div>
-            ))}
+            </div>
           </div>
+
+          {/* Conversion Playbook */}
+          <div className="rounded-2xl border border-border/60 bg-panel/30 overflow-hidden hover:bg-panel/40 transition">
+            <Image
+              src="/Why_Your_Website_Gets_Traffic_But_No_Customers[REALE DIGITAL].png"
+              alt="Conversion Playbook"
+              width={800}
+              height={800}
+              className="w-full h-auto object-cover"
+            />
+            <div className="p-6">
+              <h2 className="text-xl font-semibold">
+                Traffic But No Customers
+              </h2>
+              <p className="text-muted mt-2 text-sm">
+                Fix conversion leaks and turn traffic into actual booked calls.
+              </p>
+              <div className="mt-4">
+                <Button href="/conversion-playbook" variant="primary">
+                  View Guide
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Automation Starter Kit */}
+          <div className="rounded-2xl border border-border/60 bg-panel/30 overflow-hidden hover:bg-panel/40 transition">
+            <Image
+              src="/Automation_Starter_Kit[REALE DIGITAL].png"
+              alt="Automation Starter Kit"
+              width={800}
+              height={800}
+              className="w-full h-auto object-cover"
+            />
+            <div className="p-6">
+              <h2 className="text-xl font-semibold">
+                Automation Starter Kit (2026)
+              </h2>
+              <p className="text-muted mt-2 text-sm">
+                AI + SMS + scheduling systems that capture and follow up automatically.
+              </p>
+              <div className="mt-4">
+                <Button href="/automation-starter-kit" variant="primary">
+                  View Guide
+                </Button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </Container>
     </main>
