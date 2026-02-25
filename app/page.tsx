@@ -1,10 +1,13 @@
 // app/page.tsx
-import Link from "next/link";
 import { Container, Badge, Button } from "@/components/ui";
+import HeaderVolumetricLaser from "@/components/HeaderVolumetricLaser";
 
 export default function HomePage() {
   return (
     <main>
+      {/* VOLUMETRIC HEADER (CINEMATIC BACKGROUND) */}
+      <HeaderVolumetricLaser />
+
       {/* HERO */}
       <section className="py-14 md:py-20">
         <Container>
