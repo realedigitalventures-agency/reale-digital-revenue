@@ -17,3 +17,12 @@ html, body { height: 100%; }
 body { background: rgb(var(--bg)); color: rgb(var(--text)); }
 
 input, button, textarea { font: inherit; }
+
+/* --- Reale Digital: subtle 3D hover tilt utility --- */
+.rd-tilt {
+  transform: perspective(900px) rotateX(0deg) rotateY(0deg);
+}
+
+.group:hover .rd-tilt {
+  transform: perspective(900px) rotateX(1.5deg) rotateY(-2.5deg);
+}
