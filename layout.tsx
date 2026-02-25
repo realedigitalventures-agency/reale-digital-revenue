@@ -1,35 +1,21 @@
-import "./globals.css";
-import { site } from "@/lib/site";
-import { Header, Footer } from "@/components/ui";
 import type { Metadata } from "next";
+import { Header, Footer } from "@/components/ui"; // <-- adjust if your ui.tsx path differs
+import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: {
-    default: "Reale Digital | AI Search & Automation Systems",
-    template: "%s | Reale Digital"
-  },
-  description: site.description,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    url: site.url,
-    siteName: site.name,
-    title: "Reale Digital | AI Search & Automation Systems",
-    description: site.description
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Reale Digital | AI Search & Automation Systems",
-    description: site.description
-  },
-  robots: { index: true, follow: true }
+  title: "Reale Digital | AI Search & Automation Systems",
+  description:
+    "AI Search Optimization and Automation Systems that turn traffic into revenue.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className="h-full">
+      <body className="min-h-screen bg-bg text-text antialiased">
         <Header />
         {children}
         <Footer />
