@@ -3,9 +3,7 @@ import { Container, Badge, Button } from "@/components/ui";
 import HeaderVolumetricLaser from "@/components/HeaderVolumetricLaser";
 
 export default function HomePage() {
-  return (
-    <main>
-      {/* VOLUMETRIC HEADER (CINEMATIC BACKGROUND) */}
+  y BACKGROUND) */}
       <HeaderVolumetricLaser />
 
       {/* HERO */}
