@@ -18,19 +18,24 @@ export function Badge({ children }: { children: ReactNode }) {
 export function Button({
   href,
   children,
-  variant = "primary"
+  variant = "primary",
+  className = ""
 }: {
   href: string;
   children: ReactNode;
   variant?: "primary" | "secondary";
+  className?: string;
 }) {
+  const base =
+    "inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold transition duration-200";
+
   const cls =
     variant === "primary"
-      ? "inline-flex items-center justify-center rounded-xl bg-brand-teal px-5 py-3 font-semibold text-[#001b18] shadow-glow hover:opacity-95"
-      : "inline-flex items-center justify-center rounded-xl border border-border/70 bg-transparent px-5 py-3 font-semibold text-foreground hover:bg-panel/40";
+      ? `${base} bg-brand-teal text-[#001b18] shadow-glow hover:opacity-95 hover:-translate-y-[1px]`
+      : `${base} border border-border/70 bg-transparent text-foreground hover:bg-panel/40`;
 
   return (
-    <Link href={href} className={cls}>
+    <Link href={href} className={`${cls} ${className}`}>
       {children}
     </Link>
   );
@@ -50,7 +55,7 @@ export function Card({
   return (
     <Link
       href={href}
-      className="group block rounded-2xl border border-border/60 bg-panel/30 p-6 hover:bg-panel/45"
+      className="group block rounded-2xl border border-border/60 bg-panel/30 p-6 hover:bg-panel/45 transition"
     >
       {badge ? (
         <div className="mb-3">
@@ -81,7 +86,7 @@ export function Header() {
                 Digital
               </span>
 
-              {/* Stronger glow bloom */}
+              {/* glow bloom */}
               <span className="pointer-events-none absolute -inset-3 -z-10 rounded-xl bg-[radial-gradient(circle_at_30%_30%,rgba(46,211,198,0.35),rgba(59,130,246,0.25),transparent_70%)] blur-xl" />
             </span>
 
@@ -94,8 +99,6 @@ export function Header() {
             <Link href="/resources" className="text-sm text-muted hover:text-foreground">
               Resources
             </Link>
-
-            {/* Removed: Free Audit text link */}
 
             <Button href="/free-ai-visibility-audit" variant="primary">
               Start Audit
