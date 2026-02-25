@@ -1,13 +1,14 @@
-// app/page.tsx
+import Image from "next/image";
 import { Container, Badge, Button } from "@/components/ui";
-import HeaderVolumetricLaser from "@/components/HeaderVolumetricLaser";
 
 export default function HomePage() {
-  y BACKGROUND) */}
-      <HeaderVolumetricLaser />
-
+  return (
+    <main>
       {/* HERO */}
-      <section className="py-14 md:py-20">
+      <section className="relative py-14 md:py-20">
+        {/* subtle hero glow */}
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_10%,rgba(46,211,198,0.16),transparent_55%)]" />
+
         <Container>
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-2">
@@ -57,6 +58,53 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* FREE EMAIL GUIDE CONVERSION SECTION */}
+      <section className="py-20 border-t border-border/50">
+        <Container>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex flex-wrap gap-2">
+                <Badge>Free Guide</Badge>
+                <Badge>Quick Win</Badge>
+              </div>
+
+              <h2 className="mt-5 text-3xl md:text-4xl font-bold">
+                Stop paying $6 per user for email.
+              </h2>
+
+              <p className="mt-4 text-lg text-muted">
+                Learn how to create unlimited branded business emails without paying Google Workspace monthly fees.
+              </p>
+
+              <ul className="mt-6 space-y-3 text-muted">
+                <li>✔ Unlimited inboxes</li>
+                <li>✔ Works with Gmail</li>
+                <li>✔ Setup takes ~15 minutes</li>
+              </ul>
+
+              <Button href="/free-email-guide" variant="primary" className="mt-8">
+                Download Free Email Guide
+              </Button>
+
+              <p className="text-xs text-muted mt-3">
+                No spam. Just the guide + optional help if you want us to do it for you.
+              </p>
+            </div>
+
+            <div className="group relative">
+              <div className="pointer-events-none absolute -inset-6 -z-10 bg-[radial-gradient(circle_at_50%_40%,rgba(46,211,198,0.18),transparent_60%)] blur-2xl opacity-70 group-hover:opacity-100 transition" />
+              <Image
+                src="/resources/email-guide-mockup.webp"
+                width={600}
+                height={750}
+                alt="Free Business Email Guide"
+                className="rounded-3xl border border-border/60 bg-panel/30 shadow-[0_20px_80px_rgba(0,0,0,0.6)] transition duration-500 group-hover:scale-[1.02] rd-tilt"
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* PROBLEM / SHIFT */}
       <section className="py-14 border-t border-border/50">
         <Container>
@@ -86,35 +134,6 @@ export default function HomePage() {
                 <li>• Automated follow-up, missed-call text-back, review requests</li>
                 <li>• A system that compounds over time</li>
               </ul>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* SOCIAL PROOF / TRUST */}
-      <section className="py-14 border-t border-border/50">
-        <Container>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="rounded-2xl border border-border/60 bg-panel/40 p-6">
-              <p className="text-sm text-muted">Best for</p>
-              <h3 className="font-semibold text-lg mt-1">Chiropractors • Med Spas • Salons</h3>
-              <p className="text-muted mt-2">
-                And any service business that needs more booked appointments with less manual follow-up.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border/60 bg-panel/40 p-6">
-              <p className="text-sm text-muted">We focus on</p>
-              <h3 className="font-semibold text-lg mt-1">Visibility + Conversion</h3>
-              <p className="text-muted mt-2">
-                Traffic alone doesn’t pay the bills. We build the funnel and automation to convert it.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border/60 bg-panel/40 p-6">
-              <p className="text-sm text-muted">You’ll love this if you want</p>
-              <h3 className="font-semibold text-lg mt-1">Less chaos, more control</h3>
-              <p className="text-muted mt-2">
-                A simple system that consistently produces leads and follow-up without extra staff.
-              </p>
             </div>
           </div>
         </Container>
