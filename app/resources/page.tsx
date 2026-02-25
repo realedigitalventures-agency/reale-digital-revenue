@@ -1,4 +1,3 @@
-// app/resources/page.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { Container, Button, Badge } from "@/components/ui";
@@ -77,7 +76,7 @@ function ResourceCard({
       className={[
         "group relative overflow-hidden rounded-3xl border border-border/60 bg-panel/30",
         "transition duration-300 hover:bg-panel/45",
-        "hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(46,211,198,0.35),0_20px_60px_rgba(0,0,0,0.6)]"
+        "hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(46,211,198,0.35),0_20px_70px_rgba(0,0,0,0.65)]"
       ].join(" ")}
     >
       {/* Top badges */}
@@ -89,7 +88,7 @@ function ResourceCard({
         {r.badge ? <Badge>{r.badge}</Badge> : null}
       </div>
 
-      {/* Image (Slight 3D depth on hover) */}
+      {/* Image (Tilt + glow on hover) */}
       <div
         className={
           isFeatured
@@ -97,7 +96,7 @@ function ResourceCard({
             : "relative h-[260px] sm:h-[280px] overflow-hidden"
         }
       >
-        <div className="absolute inset-0 transition duration-500 group-hover:scale-105 group-hover:-rotate-[1deg] group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.7)]">
+        <div className="absolute inset-0 rd-tilt transition duration-500 group-hover:scale-[1.04] group-hover:shadow-[0_30px_90px_rgba(0,0,0,0.75)]">
           <Image
             src={r.imageSrc}
             alt={r.title}
@@ -112,9 +111,13 @@ function ResourceCard({
           />
         </div>
 
-        {/* Premium overlays */}
+        {/* cinematic overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/35 to-black/80" />
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[radial-gradient(circle_at_50%_40%,rgba(46,211,198,0.18),transparent_60%)]" />
+
+        {/* animated hover glow */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_50%_30%,rgba(46,211,198,0.22),transparent_60%)] motion-safe:animate-pulse" />
+
+        {/* bottom fade */}
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-panel/90 to-transparent" />
       </div>
 
@@ -125,7 +128,6 @@ function ResourceCard({
           <Badge>Free Download</Badge>
         </div>
 
-        {/* Conversion label */}
         <p className="mt-3 text-sm text-brand-teal font-semibold">
           Free 2026 Playbook
         </p>
@@ -164,7 +166,7 @@ function ResourceCard({
 
           <Link
             href="/free-ai-visibility-audit"
-            className="inline-flex items-center justify-center rounded-xl border border-border/70 bg-transparent px-5 py-3 text-sm font-semibold text-foreground hover:bg-panel/40"
+            className="inline-flex items-center justify-center rounded-xl border border-border/70 bg-transparent px-5 py-3 text-sm font-semibold text-foreground hover:bg-panel/40 transition"
           >
             Get Free Audit
           </Link>
@@ -197,8 +199,8 @@ export default function ResourcesPage() {
           </h1>
 
           <p className="mt-4 text-muted text-lg">
-            The same frameworks we use to help chiropractors, med spas, salons,
-            and service businesses get picked by AI and convert attention into booked calls.
+            The same frameworks we use to help chiropractors, med spas, salons, and service businesses
+            get picked by AI and convert attention into booked calls.
           </p>
         </div>
 
