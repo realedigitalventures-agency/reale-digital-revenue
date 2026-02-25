@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import type { ReactNode } from "react";
 
 export function Container({ children }: { children: ReactNode }) {
@@ -60,7 +59,7 @@ export function Card({
       ) : null}
       <div className="text-lg font-semibold">{title}</div>
       <div className="mt-2 text-sm text-muted">{body}</div>
-      <div className="mt-4 text-sm font-semibold text-brand-blue group-hover:underline">
+      <div className="mt-4 text-sm font-semibold text-brand-teal group-hover:underline">
         Learn more →
       </div>
     </Link>
@@ -69,34 +68,36 @@ export function Card({
 
 export function Header() {
   return (
-<header className="sticky top-0 z-20 border-b border-border/50 bg-panel/80 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-border/50 bg-panel/80 backdrop-blur">
       <Container>
         <div className="flex items-center justify-between py-4">
-          {/* LOGO (PNG) */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/brand/logo.png"
-              alt="Reale Digital"
-              width={170}
-              height={44}
-              priority
-              className="h-auto w-auto drop-shadow-[0_0_10px_rgba(46,211,198,0.20)] transition-opacity duration-200 hover:opacity-90"
-            />
+          {/* TEXT LOGO (Gradient + Glow) */}
+          <Link href="/" className="flex items-center gap-3">
+            <span className="relative font-extrabold tracking-tight text-lg sm:text-xl">
+              <span className="bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
+                Reale
+              </span>{" "}
+              <span className="bg-gradient-to-r from-brand-teal to-brand-teal bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(46,211,198,0.40)]">
+                Digital
+              </span>
+
+              {/* subtle glow behind text */}
+              <span className="pointer-events-none absolute -inset-2 -z-10 rounded-xl bg-[radial-gradient(circle_at_30%_30%,rgba(46,211,198,0.22),transparent_60%)] blur-md" />
+            </span>
+
+            {/* optional small badge */}
+            <span className="hidden sm:inline-flex items-center rounded-full border border-border/60 bg-panel/40 px-2 py-1 text-[10px] text-muted">
+              AI Growth Systems
+            </span>
           </Link>
 
           <nav className="flex items-center gap-3">
-            <Link
-              href="/resources"
-              className="text-sm text-muted hover:text-text"
-            >
+            <Link href="/resources" className="text-sm text-muted hover:text-text">
               Resources
             </Link>
-            <Link
-              href="/free-ai-visibility-audit"
-              className="text-sm text-muted hover:text-text"
-            >
-              Free Audit
-            </Link>
+
+            {/* Removed: Free Audit text link */}
+
             <Button href="/free-ai-visibility-audit" variant="primary">
               Start Audit
             </Button>
@@ -116,7 +117,7 @@ export function Footer() {
           <div>
             <Link
               href="/free-ai-visibility-audit"
-              className="text-brand-blue hover:underline"
+              className="text-brand-teal hover:underline"
             >
               Free AI Visibility Audit
             </Link>
