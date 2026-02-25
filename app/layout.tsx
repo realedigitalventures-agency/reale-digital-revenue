@@ -1,21 +1,16 @@
-import type { Metadata } from "next";
-import { Header, Footer } from "@/components/ui"; // <-- adjust if your ui.tsx path differs
 import "./globals.css";
+import type { ReactNode } from "react";
+import { Header, Footer } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Reale Digital | AI Search & Automation Systems",
-  description:
-    "AI Search Optimization and Automation Systems that turn traffic into revenue.",
+  description: "AI Search Optimization and Automation Systems that turn traffic into revenue."
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="h-full">
-      <body className="min-h-screen bg-bg text-text antialiased">
+    <html lang="en">
+      <body className="min-h-screen bg-bg text-foreground">
         <Header />
         {children}
         <Footer />
