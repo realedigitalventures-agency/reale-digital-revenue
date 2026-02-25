@@ -27,7 +27,7 @@ export function Button({
   const cls =
     variant === "primary"
       ? "inline-flex items-center justify-center rounded-xl bg-brand-teal px-5 py-3 font-semibold text-[#001b18] shadow-glow hover:opacity-95"
-      : "inline-flex items-center justify-center rounded-xl border border-border/70 bg-transparent px-5 py-3 font-semibold text-text hover:bg-panel/40";
+      : "inline-flex items-center justify-center rounded-xl border border-border/70 bg-transparent px-5 py-3 font-semibold text-foreground hover:bg-panel/40";
 
   return (
     <Link href={href} className={cls}>
@@ -71,28 +71,27 @@ export function Header() {
     <header className="sticky top-0 z-20 border-b border-border/50 bg-panel/80 backdrop-blur">
       <Container>
         <div className="flex items-center justify-between py-4">
-          {/* TEXT LOGO (Gradient + Glow) */}
+          {/* TEXT LOGO (Premium Gradient + Neon Glow) */}
           <Link href="/" className="flex items-center gap-3">
             <span className="relative font-extrabold tracking-tight text-lg sm:text-xl">
-              <span className="bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
                 Reale
               </span>{" "}
-              <span className="bg-gradient-to-r from-brand-teal to-brand-teal bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(46,211,198,0.40)]">
+              <span className="bg-gradient-to-r from-brand-teal via-brand-blue to-brand-violet bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(46,211,198,0.45)]">
                 Digital
               </span>
 
-              {/* subtle glow behind text */}
-              <span className="pointer-events-none absolute -inset-2 -z-10 rounded-xl bg-[radial-gradient(circle_at_30%_30%,rgba(46,211,198,0.22),transparent_60%)] blur-md" />
+              {/* Stronger glow bloom */}
+              <span className="pointer-events-none absolute -inset-3 -z-10 rounded-xl bg-[radial-gradient(circle_at_30%_30%,rgba(46,211,198,0.35),rgba(59,130,246,0.25),transparent_70%)] blur-xl" />
             </span>
 
-            {/* optional small badge */}
             <span className="hidden sm:inline-flex items-center rounded-full border border-border/60 bg-panel/40 px-2 py-1 text-[10px] text-muted">
               AI Growth Systems
             </span>
           </Link>
 
           <nav className="flex items-center gap-3">
-            <Link href="/resources" className="text-sm text-muted hover:text-text">
+            <Link href="/resources" className="text-sm text-muted hover:text-foreground">
               Resources
             </Link>
 
