@@ -1,0 +1,1 @@
+export default function CTAButton({text,link}){return null;}
